@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EnCorto – Lo que pasa, EnCorto.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul: #1a2472; --rojo: #d93025; --blanco: #ffffff;
+      --gris-bg: #f2f4f8; --gris-borde: #d0d4e0; --gris-texto: #444;
+      --fuente-titulo: 'Montserrat', sans-serif;
+      --fuente-cuerpo: 'Source Serif 4', Georgia, serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--fuente-cuerpo); background: var(--gris-bg); color: #111; font-size: 16px; line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+    .contenedor { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* HEADER */
+    header { background: var(--azul); color: var(--blanco); }
+    .header-top { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 1.5rem; font-size: 11px; opacity: 0.75; border-bottom: 1px solid rgba(255,255,255,0.15); }
+    .header-brand { text-align: center; padding: 1.25rem 1.5rem 0; }
+    .nombre-periodico { font-family: var(--fuente-titulo); font-size: 3.8rem; font-weight: 900; letter-spacing: -2px; line-height: 1; color: var(--rojo); }
+    .nombre-periodico span { color: var(--blanco); }
+    .eslogan { font-size: 12px; letter-spacing: 2px; color: rgba(255,255,255,0.6); margin-top: 4px; font-style: italic; }
+    nav { display: flex; justify-content: center; border-top: 3px solid var(--rojo); margin-top: 1rem; }
+    nav a { color: rgba(255,255,255,0.85); font-family: var(--fuente-titulo); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 0.65rem 2rem; transition: background 0.2s; }
+    nav a:hover, nav a.activo { background: var(--rojo); color: var(--blanco); }
+
+    /* BREAKING */
+    .breaking { background: var(--rojo); color: var(--blanco); display: flex; align-items: center; font-size: 13px; overflow: hidden; }
+    .breaking-label { background: #a01a10; padding: 0.45rem 1rem; font-family: var(--fuente-titulo); font-weight: 900; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+    .breaking-text { padding: 0.45rem 1rem; }
+
+    /* CUERPO */
+    .cuerpo { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; padding: 2rem 0; }
+
+    /* ETIQUETA */
+    .etiqueta { font-family: var(--fuente-titulo); font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 2.5px; color: var(--blanco); background: var(--azul); padding: 4px 10px; display: inline-block; margin-bottom: 1rem; border-radius: 2px; }
+    .etiqueta.roja { background: var(--rojo); }
+
+    /* NOTICIA PRINCIPAL CLICKEABLE */
+    .noticia-principal-link { display: block; cursor: pointer; }
+    .noticia-principal-link:hover .titular-grande { color: var(--rojo); text-decoration: underline; }
+
+    .titular-grande { font-family: var(--fuente-titulo); font-size: 2.1rem; font-weight: 900; line-height: 1.15; margin-bottom: 0.6rem; color: var(--azul); transition: color 0.2s; }
+    .lead { font-size: 1.05rem; color: #222; font-style: italic; margin-bottom: 0.75rem; line-height: 1.6; border-left: 4px solid var(--rojo); padding-left: 1rem; }
+    .firma { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--gris-texto); border-bottom: 2px solid var(--rojo); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+
+    /* VIDEO */
+    .video-wrap { position: relative; width: 100%; border-radius: 6px; overflow: hidden; margin-bottom: 1rem; background: #000; }
+    .video-wrap video { width: 100%; max-height: 380px; display: block; object-fit: cover; }
+
+    /* RESUMEN */
+    .resumen-texto p { margin-bottom: 0.85rem; font-size: 15px; line-height: 1.85; color: #333; }
+
+    .leer-mas { display: inline-block; margin-top: 1rem; background: var(--rojo); color: var(--blanco); font-family: var(--fuente-titulo); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 10px 20px; border-radius: 3px; transition: background 0.2s; }
+    .leer-mas:hover { background: #a01a10; }
+
+    /* DIVISOR */
+    hr { border: none; border-top: 1px solid var(--gris-borde); margin: 1.5rem 0; }
+    .hr-rojo { border: none; border-top: 3px solid var(--rojo); margin: 1.5rem 0; }
+
+    /* CUADRÍCULA */
+    .cuadricula { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1rem; }
+    .tarjeta { background: var(--blanco); border-radius: 4px; padding: 0.85rem; border: 1px solid var(--gris-borde); }
+    .tarjeta h3 { font-family: var(--fuente-titulo); font-size: 0.9rem; font-weight: 700; line-height: 1.3; margin-bottom: 4px; color: var(--azul); }
+    .tarjeta p { font-size: 13px; color: var(--gris-texto); line-height: 1.5; }
+
+    /* LATERAL */
+    .lateral .tarjeta { margin-bottom: 1rem; }
+
+    .redes { background: var(--rojo); border-radius: 4px; padding: 1rem; margin-bottom: 1rem; }
+    .redes h4 { font-family: var(--fuente-titulo); font-size: 11px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.75rem; color: rgba(255,255,255,0.75); }
+    .redes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .red-btn { background: rgba(255,255,255,0.15); color: var(--blanco); border-radius: 3px; padding: 8px; font-size: 12px; font-family: var(--fuente-titulo); font-weight: 700; text-align: center; transition: background 0.2s; display: block; }
+    .red-btn:hover { background: rgba(255,255,255,0.3); }
+
+    .alerta-box { background: var(--azul); color: var(--blanco); border-radius: 4px; padding: 1rem; margin-bottom: 1rem; font-size: 13px; line-height: 1.6; }
+    .alerta-box strong { font-family: var(--fuente-titulo); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 6px; color: rgba(255,255,255,0.6); }
+
+    /* FOOTER */
+    footer { background: var(--azul); color: rgba(255,255,255,0.7); padding: 1.5rem; text-align: center; font-size: 12px; margin-top: 1rem; }
+    footer strong { color: var(--blanco); font-family: var(--fuente-titulo); }
+    footer a { color: rgba(255,255,255,0.6); }
+    footer a:hover { color: var(--blanco); }
+
+    /* PLACEHOLDER */
+    .foto-placeholder { background: #dde2ef; border: 1px dashed var(--gris-borde); width: 100%; height: 110px; display: flex; align-items: center; justify-content: center; color: #7a8ab0; font-size: 13px; border-radius: 4px; margin-bottom: 0.6rem; gap: 6px; }
+
+    @media (max-width: 720px) {
+      .nombre-periodico { font-size: 2.5rem; }
+      .cuerpo { grid-template-columns: 1fr; }
+      .cuadricula { grid-template-columns: 1fr; }
+      nav { flex-wrap: wrap; }
+      nav a { font-size: 11px; padding: 0.5rem 1rem; }
+      .header-top { flex-direction: column; gap: 2px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-top">
+      <span id="fecha"></span>
+      <span>Periodismo digital local · Edición web</span>
+      <span>Nuevo Chimbote, Áncash</span>
+    </div>
+    <div class="header-brand">
+      <div class="nombre-periodico">En<span>Corto</span></div>
+      <div class="eslogan">"Lo que pasa, EnCorto."</div>
+    </div>
+    <nav>
+      <a href="index.html" class="activo">Portada</a>
+      <a href="#">Seguridad</a>
+      <a href="#">Denuncias policiales</a>
+    </nav>
+  </header>
+
+  <div class="breaking">
+    <span class="breaking-label">&#9654; Ahora</span>
+    <span class="breaking-text">Robo de celular captado en cámara en el mercado Buenos Aires de Nuevo Chimbote</span>
+  </div>
+
+  <div class="contenedor">
+    <div class="cuerpo">
+
+      <main>
+        <span class="etiqueta roja">🔴 Seguridad · Denuncia policial</span>
+
+        <!-- NOTICIA PRINCIPAL CLICKEABLE -->
+        <a href="noticia-robo.html" class="noticia-principal-link">
+          <h1 class="titular-grande">Presunto robo de celular quedó registrado en cámara en el mercado Buenos Aires de Nuevo Chimbote</h1>
+        </a>
+
+        <p class="lead">Un hombre ingresó a un local comercial del mercado Buenos Aires, aprovechó que no había personal de atención y se llevó un celular que estaba conectado a un cargador. Todo quedó grabado por las cámaras de videovigilancia del negocio.</p>
+
+        <div class="firma">Por Redacción EnCorto · Nuevo Chimbote · 1 de julio de 2026</div>
+
+        <!-- VIDEO -->
+        <div class="video-wrap">
+          <iframe width="100%" height="360" src="https://www.youtube.com/embed/Am7xbd0eGIU" title="Robo de celular en mercado Buenos Aires" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block"></iframe>
+        </div>
+
+        <div class="resumen-texto">
+          <p>Según se observa en las imágenes del sistema de videovigilancia, el sujeto verificó que el local estuviera solo antes de dirigirse directamente al celular, desconectarlo del cargador y guardarlo entre sus pertenencias. El hecho ocurrió en cuestión de segundos.</p>
+          <p>Comerciantes del mercado expresaron su preocupación y exigieron mayor presencia policial en la zona. Hasta el momento se desconoce si la parte afectada presentó denuncia formal ante las autoridades.</p>
+        </div>
+
+        <a href="noticia-robo.html" class="leer-mas">Leer nota completa + entrevistas →</a>
+
+        <div class="hr-rojo"></div>
+
+        <span class="etiqueta">Más denuncias y seguridad</span>
+        <div class="cuadricula">
+          <a href="noticia-motocar.html" class="tarjeta" style="display:block">
+            <div class="foto-placeholder" style="background:#000">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <h3>Le robaron la motocar por segunda vez frente a su casa, pero un número escondido en el bolsillo permitió recuperarla</h3>
+            <p>Una motocar fue robada de madrugada y hallada tres días después en Huarmey. Un papel con un número de contacto en el bolsillo permitió ubicar al dueño.</p>
+          </a>
+          <div class="tarjeta">
+            <div class="foto-placeholder">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a8ab0" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+              Foto pendiente
+            </div>
+            <h3>Aquí va el título de tu tercera noticia</h3>
+            <p>Breve descripción de este hecho para que el lector decida si quiere leerla completa.</p>
+          </div>
+        </div>
+      </main>
+
+      <!-- LATERAL -->
+      <aside class="lateral">
+
+        <span class="etiqueta">Últimas denuncias</span>
+
+        <div class="tarjeta" style="margin-bottom:1rem">
+          <h3>Denuncia reciente número uno</h3>
+          <p>Resumen corto del hecho. Dos o tres líneas máximo.</p>
+        </div>
+        <div class="tarjeta" style="margin-bottom:1rem">
+          <h3>Denuncia reciente número dos</h3>
+          <p>Resumen corto del hecho. Dos o tres líneas máximo.</p>
+        </div>
+        <div class="tarjeta" style="margin-bottom:1rem">
+          <h3>Denuncia reciente número tres</h3>
+          <p>Resumen corto del hecho. Dos o tres líneas máximo.</p>
+        </div>
+
+        <div class="alerta-box">
+          <strong>📢 ¿Tienes una denuncia?</strong>
+          Escríbenos por WhatsApp o Instagram y la publicamos. Tu voz importa en EnCorto.
+        </div>
+
+        <div class="redes">
+          <h4>📲 Síguenos</h4>
+          <div class="redes-grid">
+            <a href="#" class="red-btn">Facebook</a>
+            <a href="https://www.instagram.com/_en_corto_/" target="_blank" class="red-btn">Instagram</a>
+            <a href="#" class="red-btn">TikTok</a>
+            <a href="#" class="red-btn">YouTube</a>
+            <a href="#" class="red-btn" style="grid-column:span 2">WhatsApp</a>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+  <footer>
+    <strong>EnCorto</strong> · "Lo que pasa, EnCorto." · Periodismo digital local<br>
+    Contacto: <a href="mailto:redaccion@encorto.pe">redaccion@encorto.pe</a><br><br>
+    <small>Equipo: Andrea Tinco · Minerva Vidal · Mickella Umeres · Jared Olortiga</small>
+  </footer>
+
+  <script>
+    const dias = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+    const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    const hoy = new Date();
+    document.getElementById('fecha').textContent = dias[hoy.getDay()] + ', ' + hoy.getDate() + ' de ' + meses[hoy.getMonth()] + ' de ' + hoy.getFullYear();
+  </script>
+</body>
+</html>

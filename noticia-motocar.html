@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le robaron la motocar por segunda vez – EnCorto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul: #1a2472; --rojo: #d93025; --blanco: #ffffff;
+      --gris-bg: #f2f4f8; --gris-borde: #d0d4e0; --gris-texto: #444;
+      --fuente-titulo: 'Montserrat', sans-serif;
+      --fuente-cuerpo: 'Source Serif 4', Georgia, serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--fuente-cuerpo); background: var(--gris-bg); color: #111; font-size: 16px; line-height: 1.7; }
+    a { color: inherit; text-decoration: none; }
+    .contenedor { max-width: 820px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+
+    /* HEADER */
+    header { background: var(--azul); color: var(--blanco); }
+    .header-top { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 1.5rem; font-size: 11px; opacity: 0.75; border-bottom: 1px solid rgba(255,255,255,0.15); }
+    .header-brand { text-align: center; padding: 1.25rem 1.5rem 0; }
+    .nombre-periodico { font-family: var(--fuente-titulo); font-size: 3rem; font-weight: 900; letter-spacing: -2px; line-height: 1; color: var(--rojo); }
+    .nombre-periodico span { color: var(--blanco); }
+    .eslogan { font-size: 11px; letter-spacing: 2px; color: rgba(255,255,255,0.6); margin-top: 4px; font-style: italic; }
+    nav { display: flex; justify-content: center; border-top: 3px solid var(--rojo); margin-top: 1rem; }
+    nav a { color: rgba(255,255,255,0.85); font-family: var(--fuente-titulo); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 0.65rem 2rem; transition: background 0.2s; }
+    nav a:hover, nav a.activo { background: var(--rojo); color: var(--blanco); }
+
+    /* VOLVER */
+    .volver { display: inline-flex; align-items: center; gap: 6px; color: var(--azul); font-family: var(--fuente-titulo); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 1.5rem 0 1.25rem; transition: color 0.2s; }
+    .volver:hover { color: var(--rojo); }
+
+    /* CABECERA NOTICIA */
+    .seccion-tag { font-family: var(--fuente-titulo); font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 2.5px; color: var(--blanco); background: var(--rojo); padding: 4px 10px; display: inline-block; border-radius: 2px; margin-bottom: 1.25rem; }
+    .titular { font-family: var(--fuente-titulo); font-size: 2.2rem; font-weight: 900; line-height: 1.15; color: var(--azul); margin-bottom: 0.75rem; }
+    .lead { font-size: 1.1rem; line-height: 1.7; color: #222; border-left: 4px solid var(--rojo); padding-left: 1.25rem; margin-bottom: 1rem; font-style: italic; }
+    .firma { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--gris-texto); border-top: 1px solid var(--gris-borde); border-bottom: 2px solid var(--rojo); padding: 0.5rem 0; margin-bottom: 1.25rem; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+    /* VIDEO */
+    .video-wrap { width: 100%; border-radius: 8px; overflow: hidden; margin-bottom: 1.5rem; background: #000; box-shadow: 0 4px 20px rgba(0,0,0,0.15); display: flex; justify-content: center; }
+    .video-wrap iframe { display: block; max-width: 100%; }
+    .video-caption { font-size: 12px; color: var(--gris-texto); text-align: center; margin-top: 0.5rem; margin-bottom: 1.5rem; font-style: italic; }
+
+    /* CUERPO ARTÍCULO */
+    .articulo p { margin-bottom: 1.1rem; font-size: 16px; line-height: 1.9; color: #222; }
+    .articulo p:first-child::first-letter { font-size: 3.5rem; font-family: var(--fuente-titulo); font-weight: 900; color: var(--azul); float: left; line-height: 0.8; margin: 6px 10px 0 0; }
+
+    /* SEPARADOR */
+    .sep { border: none; border-top: 1px solid var(--gris-borde); margin: 2rem 0; }
+    .sep-rojo { border: none; border-top: 3px solid var(--rojo); margin: 2rem 0; }
+
+    /* ENTREVISTAS */
+    .seccion-titulo { font-family: var(--fuente-titulo); font-size: 1.1rem; font-weight: 900; color: var(--azul); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px; }
+    .seccion-titulo::after { content: ''; flex: 1; height: 2px; background: var(--rojo); }
+
+    .entrevistado { margin-bottom: 2rem; }
+    .entrevistado-titulo { font-family: var(--fuente-titulo); font-size: 13px; font-weight: 700; color: var(--blanco); background: var(--azul); padding: 6px 14px; border-radius: 3px; display: inline-block; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+
+    .pregunta { font-family: var(--fuente-titulo); font-size: 14px; font-weight: 700; color: var(--azul); margin-bottom: 0.4rem; margin-top: 1rem; }
+    .pregunta::before { content: '— '; color: var(--rojo); }
+
+    .respuesta { font-size: 15px; line-height: 1.8; color: #333; padding-left: 1rem; border-left: 3px solid var(--gris-borde); margin-bottom: 0.5rem; font-style: italic; }
+    .respuesta::before { content: '"'; color: var(--rojo); font-size: 1.5rem; font-style: normal; line-height: 0; vertical-align: -0.4rem; margin-right: 3px; }
+    .respuesta::after { content: '"'; color: var(--rojo); font-size: 1.5rem; font-style: normal; line-height: 0; vertical-align: -0.4rem; margin-left: 3px; }
+
+    /* NOTA FINAL */
+    .nota-final { background: var(--azul); color: var(--blanco); border-radius: 6px; padding: 1.25rem 1.5rem; margin-top: 2rem; font-size: 14px; line-height: 1.7; }
+    .nota-final strong { font-family: var(--fuente-titulo); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 6px; color: rgba(255,255,255,0.6); }
+
+    /* COMPARTIR */
+    .compartir { display: flex; gap: 10px; margin-top: 2rem; flex-wrap: wrap; }
+    .compartir a { font-family: var(--fuente-titulo); font-size: 12px; font-weight: 700; padding: 8px 18px; border-radius: 3px; transition: opacity 0.2s; }
+    .compartir a:hover { opacity: 0.85; }
+    .btn-ig { background: #e1306c; color: #fff; }
+    .btn-fb { background: #1877f2; color: #fff; }
+    .btn-wa { background: #25d366; color: #fff; }
+
+    /* FOOTER */
+    footer { background: var(--azul); color: rgba(255,255,255,0.7); padding: 1.5rem; text-align: center; font-size: 12px; margin-top: 2rem; }
+    footer strong { color: var(--blanco); font-family: var(--fuente-titulo); }
+    footer a { color: rgba(255,255,255,0.6); }
+
+    @media (max-width: 720px) {
+      .nombre-periodico { font-size: 2.2rem; }
+      .titular { font-size: 1.6rem; }
+      nav a { font-size: 11px; padding: 0.5rem 1rem; }
+      .header-top { flex-direction: column; gap: 2px; text-align: center; }
+      .firma { flex-direction: column; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-top">
+      <span id="fecha"></span>
+      <span>Periodismo digital local · Edición web</span>
+      <span>Nuevo Chimbote, Áncash</span>
+    </div>
+    <div class="header-brand">
+      <a href="index.html"><div class="nombre-periodico">En<span>Corto</span></div></a>
+      <div class="eslogan">"Lo que pasa, EnCorto."</div>
+    </div>
+    <nav>
+      <a href="index.html">Portada</a>
+      <a href="#">Seguridad</a>
+      <a href="#" class="activo">Denuncias policiales</a>
+    </nav>
+  </header>
+
+  <div class="contenedor">
+
+    <a href="index.html" class="volver">← Volver a portada</a>
+
+    <span class="seccion-tag">🔴 Denuncia policial · Seguridad ciudadana</span>
+
+    <h1 class="titular">Le robaron la motocar por segunda vez frente a su casa, pero un número escondido en el bolsillo permitió recuperarla</h1>
+
+    <p class="lead">Una motocar estacionada frente a la vivienda de su propietario fue robada de madrugada. Tres días después fue hallada abandonada en Huarmey, sin placa y sin gasolina; un papel con un número de contacto escondido en uno de sus bolsillos permitió ubicar al dueño y recuperar la unidad.</p>
+
+    <div class="firma">
+      <span>📍 Nuevo Chimbote / Huarmey, Áncash</span>
+      <span>📅 29 de junio de 2026</span>
+      <span>✍️ Minerva Vidal · Redacción EnCorto</span>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="video-wrap">
+      <iframe width="257" height="460" src="https://www.youtube.com/embed/CW0T9HmKnj8" title="Robo de motocar recuperada en Huarmey" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block"></iframe>
+    </div>
+    <p class="video-caption">📹 Video sobre el caso de la motocar robada y recuperada.</p>
+
+    <!-- CUERPO DE LA NOTA -->
+    <div class="articulo">
+      <p>En la madrugada del viernes 26 de junio, alrededor de las 4:00 a. m., se produjo el robo de una motocar que se encontraba estacionada afuera de la vivienda de su propietario, en circunstancias que, hasta el momento, no han sido esclarecidas del todo. El hecho, ocurrido a una hora en la que las calles suelen estar prácticamente vacías, habría facilitado que los delincuentes actuaran con rapidez y sin ser detectados por testigos.</p>
+
+      <p>Según se pudo conocer, esta no es la primera vez que el propietario sufre el robo de su motocar, lo que evidencia que el sector no estaría exento de este tipo de hechos delictivos y que los vehículos dejados en la vía pública, incluso frente a los domicilios, continúan siendo un blanco frecuente para los delincuentes.</p>
+
+      <p>Desde el momento del robo, el propietario del vehículo inició la búsqueda por distintos medios, alertando a conocidos y revisando posibles zonas por donde pudiera haber sido trasladada la unidad. Durante el fin de semana no se reportaron avances ni se tuvo noticia alguna sobre el paradero de la motocar, lo que generó incertidumbre sobre si el vehículo sería recuperado.</p>
+
+      <p>La situación tuvo un giro la mañana del lunes 29 de junio, cuando la motocicleta fue hallada en Huarmey, abandonada al costado de una autopista principal. En un primer momento, las autoridades que la encontraron no tenían forma de saber a quién pertenecía, ya que el vehículo no contaba con la placa colocada y tampoco tenía gasolina, lo que hacía más difícil establecer su procedencia.</p>
+
+      <p>Sin embargo, la búsqueda de información no terminó ahí. Al revisar la motocar, se halló en uno de los bolsillos un papel con un número de contacto, algo que el propietario tenía como costumbre dejar precisamente para casos como este. Gracias a ese dato, las autoridades lograron comunicarse con la persona registrada en el número, quien resultó ser la hija del dueño de la motocar.</p>
+
+      <p>Durante la llamada, la hija brindó una serie de detalles sobre las características del vehículo —como su color, marca y algunas señas particulares— que permitieron confirmar que, en efecto, se trataba de la unidad robada. De esta manera fue posible ubicar al propietario y coordinar la entrega correspondiente.</p>
+
+      <p>El hallazgo, ocurrido tres días después del robo, alimenta la hipótesis de que la unidad pudo haber sido usada para cometer otros hechos delictivos antes de ser desechada por quienes la sustrajeron, una modalidad frecuente en este tipo de casos. A ello se suma que la motocar fue encontrada sin la placa de identificación y sin combustible, lo que refuerza la sospecha de que fue utilizada intensamente durante los días en que estuvo en poder de los delincuentes.</p>
+
+      <p>Para el propietario, la recuperación del vehículo representa un alivio considerable, pues la motocicleta constituye su principal fuente de trabajo y su ausencia había significado, además del susto por el robo, una afectación directa a su actividad diaria.</p>
+    </div>
+
+    <div class="sep-rojo"></div>
+
+    <!-- ENTREVISTA -->
+    <div class="seccion-titulo">Voces de la comunidad</div>
+
+    <div class="entrevistado">
+      <span class="entrevistado-titulo">🚕 Propietario de la motocar</span>
+
+      <div class="pregunta">¿Cómo se dio cuenta de que le habían robado la motocicleta?</div>
+      <div class="respuesta">Noté que la moto ya no estaba en el lugar donde la había dejado la noche anterior, así que supe de inmediato que se trataba de un robo.</div>
+
+      <div class="pregunta">¿A qué hora ocurrió el robo?</div>
+      <div class="respuesta">Según pude calcular, habría sido alrededor de las 4:00 de la madrugada del viernes 26 de junio.</div>
+
+      <div class="pregunta">¿Dónde estaba estacionada la motocicleta cuando se la robaron?</div>
+      <div class="respuesta">La había dejado afuera de mi casa, como de costumbre, y en la madrugada que salía para ir a trabajar ya no se encontraba.</div>
+
+      <div class="pregunta">¿Es la primera vez que le roban la motocicleta?</div>
+      <div class="respuesta">No, lamentablemente no es la primera vez. Ya me había pasado antes, y por eso ahora trato de tomar más precauciones, aunque de todas formas volvió a suceder.</div>
+
+      <div class="pregunta">¿Qué hizo apenas se enteró del robo?</div>
+      <div class="respuesta">Empecé a preguntar a vecinos y conocidos si habían visto algo, y también recorrí algunas zonas cercanas por si la encontraba abandonada.</div>
+
+      <div class="pregunta">¿Tuvo alguna noticia sobre la moto durante el fin de semana?</div>
+      <div class="respuesta">No, no supe nada hasta el lunes. Fueron días de mucha preocupación e incertidumbre.</div>
+
+      <div class="pregunta">¿Cómo se enteró de que habían encontrado su motocicleta?</div>
+      <div class="respuesta">Me avisaron que había una moto abandonada al costado de la autopista en Huarmey, y al ir a verificar confirmé que era la mía.</div>
+
+      <div class="pregunta">¿En qué estado encontró la motocar?</div>
+      <div class="respuesta">La encontraron sin la placa puesta y sin gasolina. Por suerte no tenía daños graves a la vista, pero sí se nota que la usaron bastante esos días.</div>
+
+      <div class="pregunta">¿Cómo lograron ubicarlo si la moto no tenía placa?</div>
+      <div class="respuesta">Yo siempre dejo un papel con un número de contacto guardado en uno de los bolsillos de la moto, por cualquier eventualidad. Ese día las autoridades que la encontraron lo vieron y avisaron, y ellos se comunicaron con ese número.</div>
+
+      <div class="pregunta">¿A quién contactaron primero?</div>
+      <div class="respuesta">Contactaron a mi hija, porque el número que dejo es el de ella. Ella fue quien recibió la llamada de las autoridades.</div>
+
+      <div class="pregunta">¿Cómo se confirmó que la moto era suya?</div>
+      <div class="respuesta">Mi hija dio detalles como el color, la marca y algunas características particulares de la moto, y con eso las autoridades pudieron verificar que efectivamente era la nuestra.</div>
+
+      <div class="pregunta">¿Cree que la usaron para cometer algún otro delito?</div>
+      <div class="respuesta">Es una posibilidad que no descarto, ya que normalmente cuando abandonan así los vehículos, sin gasolina y sin placa, es porque ya no les servía o querían deshacerse de ella rápido.</div>
+    </div>
+
+    <!-- NOTA FINAL -->
+    <div class="nota-final">
+      <strong>📌 Estado del caso</strong>
+      La motocar fue recuperada por su propietario tres días después del robo, gracias al número de contacto hallado en el vehículo. EnCorto seguirá informando si se identifica a los responsables.
+    </div>
+
+    <!-- COMPARTIR -->
+    <div class="compartir">
+      <a href="https://www.instagram.com/_en_corto_/" target="_blank" class="btn-ig">📸 Instagram</a>
+      <a href="#" class="btn-fb">📘 Facebook</a>
+      <a href="#" class="btn-wa">💬 WhatsApp</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <strong>EnCorto</strong> · "Lo que pasa, EnCorto." · Periodismo digital local<br>
+    Contacto: <a href="mailto:redaccion@encorto.pe">redaccion@encorto.pe</a><br><br>
+    <small>Equipo: Andrea Tinco · Minerva Vidal · Mickella Umeres · Jared Olortiga</small>
+  </footer>
+
+  <script>
+    const dias = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+    const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    const hoy = new Date();
+    document.getElementById('fecha').textContent = dias[hoy.getDay()] + ', ' + hoy.getDate() + ' de ' + meses[hoy.getMonth()] + ' de ' + hoy.getFullYear();
+  </script>
+</body>
+</html>
