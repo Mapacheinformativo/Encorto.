@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centro Municipal para personas neurodivergentes – EnCorto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root{--azul:#1a2472;--rojo:#d93025;--blanco:#ffffff;--gris-bg:#f2f4f8;--gris-borde:#d0d4e0;--gris-texto:#444;--fuente-titulo:'Montserrat',sans-serif;--fuente-cuerpo:'Source Serif 4',Georgia,serif}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--fuente-cuerpo);background:var(--gris-bg);color:#111;font-size:16px;line-height:1.7}
+    a{color:inherit;text-decoration:none}
+    .contenedor{max-width:820px;margin:0 auto;padding:0 1.5rem 3rem}
+    header{background:var(--azul);color:var(--blanco)}
+    .header-top{display:flex;justify-content:space-between;align-items:center;padding:0.5rem 1.5rem;font-size:11px;opacity:0.75;border-bottom:1px solid rgba(255,255,255,0.15)}
+    .header-brand{text-align:center;padding:1.25rem 1.5rem 0}
+    .nombre-periodico{font-family:var(--fuente-titulo);font-size:3rem;font-weight:900;letter-spacing:-2px;line-height:1;color:var(--rojo)}
+    .nombre-periodico span{color:var(--blanco)}
+    .eslogan{font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.6);margin-top:4px;font-style:italic}
+    nav{display:flex;justify-content:center;border-top:3px solid var(--rojo);margin-top:1rem}
+    nav a{color:rgba(255,255,255,0.85);font-family:var(--fuente-titulo);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.65rem 2rem;transition:background 0.2s}
+    nav a:hover,nav a.activo{background:var(--rojo);color:var(--blanco)}
+    .volver{display:inline-flex;align-items:center;gap:6px;color:var(--azul);font-family:var(--fuente-titulo);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin:1.5rem 0 1.25rem;transition:color 0.2s}
+    .volver:hover{color:var(--rojo)}
+    .seccion-tag{font-family:var(--fuente-titulo);font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:2.5px;color:var(--blanco);background:var(--azul);padding:4px 10px;display:inline-block;border-radius:2px;margin-bottom:1.25rem}
+    .titular{font-family:var(--fuente-titulo);font-size:2rem;font-weight:900;line-height:1.15;color:var(--azul);margin-bottom:0.5rem}
+    .subtitular{font-size:1.1rem;font-style:italic;color:#333;margin-bottom:1rem;line-height:1.6;border-left:4px solid var(--rojo);padding-left:1.25rem}
+    .firma{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--gris-texto);border-top:1px solid var(--gris-borde);border-bottom:2px solid var(--rojo);padding:0.5rem 0;margin-bottom:1.25rem;display:flex;gap:1.5rem;flex-wrap:wrap}
+    .foto-principal{width:100%;max-height:420px;object-fit:cover;border-radius:8px;margin-bottom:0.75rem;box-shadow:0 4px 20px rgba(0,0,0,0.12)}
+    .foto-caption{font-size:12px;color:var(--gris-texto);text-align:center;margin-bottom:1.5rem;font-style:italic}
+    .articulo p{margin-bottom:1.1rem;font-size:16px;line-height:1.9;color:#222}
+    .articulo p:first-child::first-letter{font-size:3.5rem;font-family:var(--fuente-titulo);font-weight:900;color:var(--azul);float:left;line-height:0.8;margin:6px 10px 0 0}
+    .compartir{display:flex;gap:10px;margin-top:2rem;flex-wrap:wrap}
+    .compartir a{font-family:var(--fuente-titulo);font-size:12px;font-weight:700;padding:8px 18px;border-radius:3px;transition:opacity 0.2s}
+    .compartir a:hover{opacity:0.85}
+    .btn-ig{background:#e1306c;color:#fff}
+    .btn-wa{background:#25d366;color:#fff}
+    footer{background:var(--azul);color:rgba(255,255,255,0.7);padding:1.5rem;text-align:center;font-size:12px;margin-top:2rem}
+    footer strong{color:var(--blanco);font-family:var(--fuente-titulo)}
+    footer a{color:rgba(255,255,255,0.6)}
+    @media(max-width:720px){.nombre-periodico{font-size:2.2rem}.titular{font-size:1.5rem}nav a{font-size:11px;padding:0.5rem 1rem}.header-top{flex-direction:column;gap:2px;text-align:center}.firma{flex-direction:column;gap:4px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <span id="fecha"></span>
+      <span>Periodismo digital local · Edición web</span>
+      <span>Nuevo Chimbote, Áncash</span>
+    </div>
+    <div class="header-brand">
+      <a href="index.html"><div class="nombre-periodico">En<span>Corto</span></div></a>
+      <div class="eslogan">"Lo que pasa, EnCorto."</div>
+    </div>
+    <nav>
+      <a href="index.html">Portada</a>
+      <a href="#">Seguridad</a>
+      <a href="#">Denuncias policiales</a>
+    </nav>
+  </header>
+
+  <div class="contenedor">
+    <a href="index.html" class="volver">← Volver a portada</a>
+
+    <span class="seccion-tag">🗳️ Elecciones 2026 · Inclusión</span>
+
+    <h1 class="titular">Propuesta de centro municipal para personas neurodivergentes genera expectativa y plantea retos en Nuevo Chimbote</h1>
+
+    <p class="subtitular">El candidato Clind Silva plantea crear un Centro Municipal Integral para personas neurodivergentes; especialistas y padres de familia consideran que la iniciativa podría atender una necesidad existente, aunque advierten que requerirá planificación y recursos sostenibles.</p>
+
+    <div class="firma">
+      <span>📍 Nuevo Chimbote, Áncash</span>
+      <span>✍️ Redacción EnCorto</span>
+    </div>
+
+    <img src="centro_neurodivergentes_nuevo_chimbote.jpeg" alt="Entrevista sobre propuesta de centro municipal para personas neurodivergentes" class="foto-principal">
+    <p class="foto-caption">📸 Cobertura de campo realizada por el equipo de EnCorto.</p>
+
+    <div class="articulo">
+      <p>La propuesta de implementar un Centro Municipal Integral para Personas Neurodivergentes, presentada por el candidato a la alcaldía de Nuevo Chimbote, Clind Silva, ha puesto sobre la mesa el debate sobre el acceso a servicios especializados para niños, adolescentes y adultos con condiciones como el trastorno del espectro autista (TEA), el TDAH y otras formas de neurodivergencia.</p>
+
+      <p>Según explicó Silva, el proyecto busca concentrar en un solo espacio servicios de evaluación, terapias, orientación psicológica y acompañamiento a las familias. El candidato sostuvo que la finalidad es reducir las dificultades que enfrentan muchos padres para acceder a atención especializada y que, de ser elegido, impulsará la implementación del centro mediante recursos municipales y convenios con instituciones públicas y privadas.</p>
+
+      <p>No obstante, especialistas en neurodesarrollo consideran que una iniciativa de este tipo solo será efectiva si responde a un diagnóstico de la población y cuenta con un equipo multidisciplinario permanente. En ese sentido, señalaron que el centro debería incluir profesionales como psicólogos, terapeutas de lenguaje, terapeutas ocupacionales y especialistas en educación inclusiva, además de garantizar la continuidad de los servicios y no limitarse únicamente a la infraestructura.</p>
+
+      <p>La propuesta también fue recibida con interés por padres de familia que conviven con esta realidad. Una madre consultada indicó que actualmente muchas familias deben desplazarse a diferentes establecimientos para acceder a terapias y consultas, lo que representa una carga económica y de tiempo. En ese contexto, consideró que un centro municipal especializado podría facilitar la atención, siempre que cuente con personal capacitado y servicios permanentes.</p>
+
+      <p>Aunque la iniciativa busca responder a una necesidad que diversas familias manifiestan desde hace varios años, especialistas coinciden en que su ejecución dependerá de aspectos como el financiamiento, la planificación técnica y la capacidad de la futura gestión municipal para sostener el proyecto en el tiempo.</p>
+
+      <p>De concretarse, el Centro Municipal Integral para Personas Neurodivergentes representaría una de las primeras propuestas orientadas específicamente a este sector de la población dentro de la agenda municipal de Nuevo Chimbote, por lo que su viabilidad será uno de los aspectos que deberá ser explicado con mayor detalle durante la campaña electoral.</p>
+    </div>
+
+    <div class="compartir">
+      <a href="https://www.instagram.com/_en_corto_/" target="_blank" class="btn-ig">📸 Instagram</a>
+      <a href="#" class="btn-wa">💬 WhatsApp</a>
+    </div>
+  </div>
+
+  <footer>
+    <strong>EnCorto</strong> · "Lo que pasa, EnCorto." · Periodismo digital local<br>
+    Contacto: <a href="mailto:redaccion@encorto.pe">redaccion@encorto.pe</a><br><br>
+    <small>Equipo: Andrea Tinco · Minerva Vidal · Mickella Umeres · Jared Olortiga</small>
+  </footer>
+
+  <script>
+    const dias=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+    const meses=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    const hoy=new Date();
+    document.getElementById('fecha').textContent=dias[hoy.getDay()]+', '+hoy.getDate()+' de '+meses[hoy.getMonth()]+' de '+hoy.getFullYear();
+  </script>
+</body>
+</html>
