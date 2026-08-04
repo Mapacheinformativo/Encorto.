@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transporte urbano demanda pendiente – EnCorto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root{--azul:#1a2472;--rojo:#d93025;--blanco:#ffffff;--gris-bg:#f2f4f8;--gris-borde:#d0d4e0;--gris-texto:#444;--fuente-titulo:'Montserrat',sans-serif;--fuente-cuerpo:'Source Serif 4',Georgia,serif}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--fuente-cuerpo);background:var(--gris-bg);color:#111;font-size:16px;line-height:1.7}
+    a{color:inherit;text-decoration:none}
+    .contenedor{max-width:820px;margin:0 auto;padding:0 1.5rem 3rem}
+    header{background:var(--azul);color:var(--blanco)}
+    .header-top{display:flex;justify-content:space-between;align-items:center;padding:0.5rem 1.5rem;font-size:11px;opacity:0.75;border-bottom:1px solid rgba(255,255,255,0.15)}
+    .header-brand{text-align:center;padding:1.25rem 1.5rem 0}
+    .nombre-periodico{font-family:var(--fuente-titulo);font-size:3rem;font-weight:900;letter-spacing:-2px;line-height:1;color:var(--rojo)}
+    .nombre-periodico span{color:var(--blanco)}
+    .eslogan{font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.6);margin-top:4px;font-style:italic}
+    nav{display:flex;justify-content:center;border-top:3px solid var(--rojo);margin-top:1rem}
+    nav a{color:rgba(255,255,255,0.85);font-family:var(--fuente-titulo);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.65rem 2rem;transition:background 0.2s}
+    nav a:hover,nav a.activo{background:var(--rojo);color:var(--blanco)}
+    .volver{display:inline-flex;align-items:center;gap:6px;color:var(--azul);font-family:var(--fuente-titulo);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin:1.5rem 0 1.25rem;transition:color 0.2s}
+    .volver:hover{color:var(--rojo)}
+    .volada{font-family:var(--fuente-titulo);font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:2.5px;color:var(--blanco);background:var(--rojo);padding:4px 10px;display:inline-block;border-radius:2px;margin-bottom:1rem}
+    .titular{font-family:var(--fuente-titulo);font-size:2rem;font-weight:900;line-height:1.15;color:var(--azul);margin-bottom:0.75rem}
+    .lead{font-size:1.05rem;line-height:1.75;color:#222;border-left:4px solid var(--rojo);padding-left:1.25rem;margin-bottom:1rem}
+    .lead p{margin-bottom:0.75rem}
+    .firma{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--gris-texto);border-top:1px solid var(--gris-borde);border-bottom:2px solid var(--rojo);padding:0.5rem 0;margin-bottom:1.25rem;display:flex;gap:1.5rem;flex-wrap:wrap}
+    .foto-principal{width:100%;max-height:420px;object-fit:cover;border-radius:8px;margin-bottom:0.75rem;box-shadow:0 4px 20px rgba(0,0,0,0.12)}
+    .foto-caption{font-size:12px;color:var(--gris-texto);text-align:center;margin-bottom:1.5rem;font-style:italic}
+    .sep{border:none;border-top:1px solid var(--gris-borde);margin:2rem 0}
+    .sep-rojo{border:none;border-top:3px solid var(--rojo);margin:2rem 0}
+    .seccion-titulo{font-family:var(--fuente-titulo);font-size:1rem;font-weight:900;color:var(--azul);text-transform:uppercase;letter-spacing:1px;margin-bottom:1.25rem;display:flex;align-items:center;gap:10px}
+    .seccion-titulo::after{content:'';flex:1;height:2px;background:var(--rojo)}
+    .fuente-bloque{margin-bottom:2rem}
+    .fuente-titulo{font-family:var(--fuente-titulo);font-size:13px;font-weight:700;color:var(--blanco);background:var(--azul);padding:6px 14px;border-radius:3px;display:inline-block;margin-bottom:1rem;text-transform:uppercase;letter-spacing:1px}
+    .pregunta{font-family:var(--fuente-titulo);font-size:14px;font-weight:700;color:var(--azul);margin-bottom:0.4rem;margin-top:1rem;line-height:1.4}
+    .pregunta::before{content:'— ';color:var(--rojo)}
+    .respuesta{font-size:15px;line-height:1.8;color:#333;padding-left:1rem;border-left:3px solid var(--gris-borde);margin-bottom:0.5rem;font-style:italic}
+    .compartir{display:flex;gap:10px;margin-top:2rem;flex-wrap:wrap}
+    .compartir a{font-family:var(--fuente-titulo);font-size:12px;font-weight:700;padding:8px 18px;border-radius:3px;transition:opacity 0.2s}
+    .compartir a:hover{opacity:0.85}
+    .btn-ig{background:#e1306c;color:#fff}
+    .btn-wa{background:#25d366;color:#fff}
+    footer{background:var(--azul);color:rgba(255,255,255,0.7);padding:1.5rem;text-align:center;font-size:12px;margin-top:2rem}
+    footer strong{color:var(--blanco);font-family:var(--fuente-titulo)}
+    footer a{color:rgba(255,255,255,0.6)}
+    @media(max-width:720px){.nombre-periodico{font-size:2.2rem}.titular{font-size:1.5rem}nav a{font-size:11px;padding:0.5rem 1rem}.header-top{flex-direction:column;gap:2px;text-align:center}.firma{flex-direction:column;gap:4px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <span id="fecha"></span>
+      <span>Periodismo digital local · Edición web</span>
+      <span>Nuevo Chimbote, Áncash</span>
+    </div>
+    <div class="header-brand">
+      <a href="index.html"><div class="nombre-periodico">En<span>Corto</span></div></a>
+      <div class="eslogan">"Lo que pasa, EnCorto."</div>
+    </div>
+    <nav>
+      <a href="index.html">Portada</a>
+      <a href="#">Seguridad</a>
+      <a href="#">Denuncias policiales</a>
+    </nav>
+  </header>
+
+  <div class="contenedor">
+    <a href="index.html" class="volver">← Volver a portada</a>
+
+    <span class="volada">Elecciones 2026 | Transporte urbano</span>
+
+    <h1 class="titular">Congestión y deficiencias del servicio mantienen el transporte urbano como demanda pendiente en la provincia del Santa</h1>
+
+    <div class="lead">
+      <p>La congestión vehicular, las demoras y las deficiencias del transporte urbano continúan afectando la movilidad diaria en Chimbote y Nuevo Chimbote. Usuarios y conductores coinciden en que el problema sigue sin resolverse.</p>
+      <p>El crecimiento del parque automotor, la falta de vías alternas y la ausencia de horarios definidos generan tiempos de espera prolongados e incremento en el costo del pasaje. Estas condiciones impactan tanto a quienes trabajan al volante como a estudiantes y trabajadores que dependen del servicio para sus actividades cotidianas.</p>
+      <p>El candidato a la Municipalidad Provincial del Santa por Socios por Áncash, Edy Portalatino, señaló que la falta de planificación urbana ha contribuido a la situación actual. Propuso la ejecución de una tercera vía y la implementación de corredores viales para descongestionar el tránsito.</p>
+      <p>Desde el sector transportista, un taxista que pidió no ser identificado indicó que el tráfico ocasiona constantes pérdidas de tiempo para conductores y pasajeros. Consideró necesario priorizar la habilitación de vías alternas y el ordenamiento de los paraderos.</p>
+      <p>Alberto Sebastián Méndez, estudiante de la Universidad Nacional del Santa, manifestó que la falta de horarios establecidos, las largas esperas y el alza del pasaje dificultan sus desplazamientos. Agregó que la ausencia del carnet universitario le impide acceder al medio pasaje, lo que limita la accesibilidad del servicio para la ciudadanía.</p>
+    </div>
+
+    <div class="firma">
+      <span>📍 Chimbote, Áncash</span>
+      <span>✍️ Vidal Molina Minerva Arelí · EnCorto</span>
+    </div>
+
+    <img src="WhatsApp_Image_2026-08-03_at_10_36_26_PM.jpeg" alt="Cobertura periodística EnCorto transporte urbano" class="foto-principal">
+    <p class="foto-caption">📸 Cobertura de campo realizada por el equipo de EnCorto.</p>
+
+    <div class="sep-rojo"></div>
+    <div class="seccion-titulo">Entrevistas</div>
+
+    <!-- FUENTE 1: EDY PORTALATINO -->
+    <div class="fuente-bloque">
+      <span class="fuente-titulo">🎙️ Edy Portalatino — Candidato a la Municipalidad Provincial del Santa</span>
+
+      <div class="pregunta">Desde su diagnóstico de la provincia, ¿cuáles considera que son los principales problemas que afectan actualmente al transporte urbano y por qué cree que continúan sin resolverse?</div>
+      <div class="respuesta">El transporte urbano en Chimbote está muy saturado. Tenemos un parque automotor muy grande que no está acorde con las vías actuales. Lamentablemente, los alcaldes en su momento no han trabajado el tema urbanístico ni han planificado el transporte. La salida que nosotros vemos es armar la tercera vía, un proyecto que varios candidatos han prometido pero no han realizado. Queremos sacar adelante ese proyecto porque es uno de los ejes de nuestro programa de trabajo. Además, todas las grandes ciudades tienen corredores viales. ¿Por qué Chimbote, que es una provincia grande en la región Áncash, no tiene el suyo? ¿Por qué no modernizamos el transporte público? Ninguna autoridad se ha puesto a pensar en dar soluciones reales, y el poblador está cansado de demorar horas para llegar a su casa. Con el corredor vial y la tercera vía vamos a descongestionar el tráfico y el tránsito, y le vamos a dar más tiempo de calidad al vecino para estar con su familia.</div>
+
+      <div class="pregunta">Durante las campañas electorales suelen presentarse diversas propuestas para mejorar el transporte; sin embargo, muchas no llegan a ejecutarse. ¿Qué hace diferente a su propuesta y cómo garantizaría que pueda traducirse en resultados concretos para la ciudadanía?</div>
+      <div class="respuesta">Lamentablemente, las autoridades que nos han gobernado no han puesto énfasis en este tema. Al inicio, para buscar el voto, todos prometen muchas obras, pero no ven la necesidad real que tiene el vecino para movilizarse. Algunas autoridades anteriores decían que ciertos proyectos no eran negocio y preferían otras cosas. Nosotros sí vamos a gestionar estos proyectos. Tanto en la candidatura provincial como en la de Nuevo Chimbote (Valentín), sabemos cómo gestionar y cómo trabajar de cero para sacar proyectos emblemáticos. Queremos dejar un legado para que la gente diga: "Esa autoridad sí cumplió su palabra y su compromiso". Queremos dejar una huella en la provincia del Santa cambiando el transporte a través del corredor vial y de la tercera vía.</div>
+
+      <div class="pregunta">El transporte involucra a conductores, estudiantes, comerciantes, adultos mayores y otros usuarios con necesidades distintas. ¿Cómo incorporaría esas realidades al momento de diseñar e implementar una política de transporte para la provincia?</div>
+      <div class="respuesta">Los que sufren el problema son los ciudadanos de a pie: los que suben a un micro, a un colectivo o a un mototaxi. El gobernante no se da cuenta de cuánto tiempo demora una persona en ir al trabajo, a la ciudad o en regresar a su casa. Se necesitan acciones y decisiones firmes desde el inicio de la gestión. Con el corredor vial y la tercera vía se va a reducir el tiempo de viaje por lo menos en 30 minutos. El tiempo es plata, es vida y es calidad de vida para los ciudadanos.</div>
+    </div>
+
+    <div class="sep"></div>
+
+    <!-- FUENTE 2: TAXISTA -->
+    <div class="fuente-bloque">
+      <span class="fuente-titulo">🚕 Taxista — Conductor de taxi de la provincia del Santa (solicitó reserva de identidad)</span>
+
+      <div class="pregunta">Desde su experiencia recorriendo diariamente la ciudad, ¿cómo describiría la situación actual del transporte urbano y cuáles considera que son los problemas que más afectan tanto a los conductores como a los pasajeros?</div>
+      <div class="respuesta">La problemática principal es el caos vehicular. Hay mucha congestión y pérdida de tiempo. Para mejorarlo es necesario hacer vías alternas que permitan un tránsito más viable.</div>
+
+      <div class="pregunta">¿Cómo impactan esas dificultades en su trabajo diario y qué consecuencias observa en el servicio que finalmente recibe la población?</div>
+      <div class="respuesta">El impacto es pérdida de tiempo: horas perdidas por el caos y también por las obras que se demoran demasiado. Para el pasajero también significa pérdida de tiempo cuando se traslada de un punto a otro.</div>
+
+      <div class="pregunta">Si tuviera la oportunidad de plantearle una propuesta a la próxima autoridad municipal, ¿qué cambios consideraría prioritarios para mejorar el transporte y por qué cree que deberían atenderse con urgencia?</div>
+      <div class="respuesta">Pediría regularizar los paraderos y habilitar vías alternas para que el tráfico sea más fluido. Así se podría mejorar el servicio para todos.</div>
+    </div>
+
+    <div class="sep"></div>
+
+    <!-- FUENTE 3: ESTUDIANTE -->
+    <div class="fuente-bloque">
+      <span class="fuente-titulo">🎓 Alberto Sebastián Méndez — Estudiante, usuario frecuente del transporte público</span>
+
+      <div class="pregunta">Como usuario del transporte público, ¿cómo describiría su experiencia al desplazarse diariamente por la provincia del Santa para asistir a clases u otras actividades?</div>
+      <div class="respuesta">Es bastante aburrido. Son unos 40 minutos de estar sentado, esperando y rezando para que la "burrita" vaya rápido, no tome ningún bache, no recoja demasiados pasajeros o no se quede esperando. Es muy estresante. Además, con el aumento del precio del pasaje se me han desconfigurado todos los pagos que iba a realizar este año. Tengo que acoplarme constantemente. Es un vaivén de emociones.</div>
+
+      <div class="pregunta">¿Cuáles son las principales dificultades que encuentra al utilizar el transporte público y de qué manera afectan su rutina, su seguridad o el tiempo que dedica a sus actividades?</div>
+      <div class="respuesta">La principal dificultad es que no existe un horario. La "burra" pasa cuando se le da la gana. Uno más o menos intuye a qué hora puede salir, pero nunca es seguro. Antes, cuando me quedaba hasta tarde en la universidad, la unidad llegaba hasta las 8:00 o 8:30 de la noche y podía irme con tranquilidad. Este año ya casi no pasa a esa hora, y tengo que movilizarme a otro lugar o gastar más dinero. Siempre es un problema con la plata porque no tengo un gasto fijo. Cuando hay necesidad, sí me movilizo en colectivo, pero no debería haber esa necesidad. Se supone que debe existir un horario.</div>
+
+      <div class="pregunta">Pensando en la próxima gestión municipal, ¿qué cambios considera indispensables para que el transporte urbano responda mejor a las necesidades de los estudiantes y de la ciudadanía en general?</div>
+      <div class="respuesta">Dos cosas básicas: horarios establecidos de paso de las rutas — en Lima, por ejemplo, los buses tienen horarios definidos y eso beneficia bastante — y que se reactive el carnet universitario, que es indispensable. No sé por qué desde el año pasado no lo tenemos.</div>
+    </div>
+
+    <div class="compartir">
+      <a href="https://www.instagram.com/_en_corto_/" target="_blank" class="btn-ig">📸 Instagram</a>
+      <a href="#" class="btn-wa">💬 WhatsApp</a>
+    </div>
+  </div>
+
+  <footer>
+    <strong>EnCorto</strong> · "Lo que pasa, EnCorto." · Periodismo digital local<br>
+    Contacto: <a href="mailto:redaccion@encorto.pe">redaccion@encorto.pe</a><br><br>
+    <small>Equipo: Andrea Tinco · Minerva Vidal · Mickella Umeres · Jared Olortiga</small>
+  </footer>
+
+  <script>
+    const dias=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+    const meses=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    const hoy=new Date();
+    document.getElementById('fecha').textContent=dias[hoy.getDay()]+', '+hoy.getDate()+' de '+meses[hoy.getMonth()]+' de '+hoy.getFullYear();
+  </script>
+</body>
+</html>

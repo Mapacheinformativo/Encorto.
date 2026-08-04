@@ -68,6 +68,12 @@
     .tarjeta { background: var(--blanco); border-radius: 4px; padding: 0.85rem; border: 1px solid var(--gris-borde); }
     .tarjeta h3 { font-family: var(--fuente-titulo); font-size: 0.9rem; font-weight: 700; line-height: 1.3; margin-bottom: 4px; color: var(--azul); }
     .tarjeta p { font-size: 13px; color: var(--gris-texto); line-height: 1.5; }
+    .tarjeta-link { display: block; transition: box-shadow 0.2s, transform 0.2s; }
+    .tarjeta-link:hover { box-shadow: 0 4px 16px rgba(26,36,114,0.12); transform: translateY(-2px); text-decoration: none; }
+    .tarjeta-link:hover h3 { color: var(--rojo); }
+    .tag-cat { font-family: var(--fuente-titulo); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--rojo); display: block; margin-bottom: 4px; }
+    .thumb-video { position: relative; }
+    .play-tag { position: absolute; top: 8px; left: 8px; background: var(--rojo); color: #fff; font-family: var(--fuente-titulo); font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 2px; }
 
     /* LATERAL */
     .lateral .tarjeta { margin-bottom: 1rem; }
@@ -141,11 +147,7 @@
 
         <!-- VIDEO -->
         <div class="video-wrap">
-          <!-- INSTRUCCIÓN: Sube el video a tu repositorio de GitHub y asegúrate que se llame igual -->
-          <video controls poster="">
-            <source src="VID-20260701-WA0039.mp4" type="video/mp4">
-            Tu navegador no soporta video HTML5.
-          </video>
+          <iframe width="100%" height="360" src="https://www.youtube.com/embed/Am7xbd0eGIU" title="Robo de celular en mercado Buenos Aires" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:block"></iframe>
         </div>
 
         <div class="resumen-texto">
@@ -157,24 +159,35 @@
 
         <div class="hr-rojo"></div>
 
-        <span class="etiqueta">Más denuncias y seguridad</span>
+        <span class="etiqueta">Más noticias</span>
         <div class="cuadricula">
-          <div class="tarjeta">
-            <div class="foto-placeholder">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a8ab0" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-              Foto pendiente
+          <a href="noticia-sunarp.html" class="tarjeta tarjeta-link">
+            <div class="thumb-video">
+              <img src="https://img.youtube.com/vi/CW0T9HmKnj8/mqdefault.jpg" alt="Plantón trabajadores SUNARP Chimbote" style="height:120px;width:100%;object-fit:cover;border-radius:4px;margin-bottom:0.6rem;">
+              <span class="play-tag">▶ Video</span>
             </div>
-            <h3>Aquí va el título de tu segunda noticia</h3>
-            <p>Breve descripción de este hecho para que el lector decida si quiere leerla completa.</p>
-          </div>
-          <div class="tarjeta">
-            <div class="foto-placeholder">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a8ab0" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-              Foto pendiente
-            </div>
-            <h3>Aquí va el título de tu tercera noticia</h3>
-            <p>Breve descripción de este hecho para que el lector decida si quiere leerla completa.</p>
-          </div>
+            <span class="tag-cat">Política · Laboral</span>
+            <h3>Trabajadores CAS de SUNARP realizan plantón por presunto incumplimiento de laudo arbitral</h3>
+            <p>El gremio exige el cumplimiento íntegro del laudo 2025-2026 y advierte con huelga nacional si no hay respuesta.</p>
+          </a>
+          <a href="noticia-motocar.html" class="tarjeta tarjeta-link">
+            <img src="IMG-20260702-WA0000.jpg" alt="Motocar recuperada en Huarmey" style="height:120px;width:100%;object-fit:cover;border-radius:4px;margin-bottom:0.6rem;">
+            <span class="tag-cat">Seguridad · Robo</span>
+            <h3>Le robaron la motocar por segunda vez, pero un número escondido en el bolsillo permitió recuperarla</h3>
+            <p>Hallada en Huarmey sin placa y sin gasolina. Un papel en el bolsillo fue clave para la devolución.</p>
+          </a>
+          <a href="noticia-obras.html" class="tarjeta tarjeta-link">
+            <img src="1785838214670_image.png" alt="Candidato Edy Portalatino" style="height:120px;width:100%;object-fit:cover;border-radius:4px;margin-bottom:0.6rem;">
+            <span class="tag-cat">🗳️ Elecciones 2026 · Política</span>
+            <h3>Propuesta electoral busca descentralizar obras públicas en la provincia del Santa</h3>
+            <p>Candidato Edy Portalatino plantea núcleos ejecutores para que vecinos administren obras de hasta S/. 1.5 millones.</p>
+          </a>
+          <a href="noticia-transporte.html" class="tarjeta tarjeta-link">
+            <img src="WhatsApp_Image_2026-08-03_at_10_36_26_PM.jpeg" alt="Cobertura transporte urbano EnCorto" style="height:120px;width:100%;object-fit:cover;border-radius:4px;margin-bottom:0.6rem;">
+            <span class="tag-cat">🚌 Elecciones 2026 · Transporte</span>
+            <h3>Congestión y deficiencias mantienen el transporte urbano como demanda pendiente en el Santa</h3>
+            <p>Conductores y estudiantes coinciden: sin horarios ni vías alternas, el problema seguirá sin resolverse.</p>
+          </a>
         </div>
       </main>
 

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propuesta electoral descentralizar obras – EnCorto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root{--azul:#1a2472;--rojo:#d93025;--blanco:#ffffff;--gris-bg:#f2f4f8;--gris-borde:#d0d4e0;--gris-texto:#444;--fuente-titulo:'Montserrat',sans-serif;--fuente-cuerpo:'Source Serif 4',Georgia,serif}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:var(--fuente-cuerpo);background:var(--gris-bg);color:#111;font-size:16px;line-height:1.7}
+    a{color:inherit;text-decoration:none}
+    .contenedor{max-width:820px;margin:0 auto;padding:0 1.5rem 3rem}
+    header{background:var(--azul);color:var(--blanco)}
+    .header-top{display:flex;justify-content:space-between;align-items:center;padding:0.5rem 1.5rem;font-size:11px;opacity:0.75;border-bottom:1px solid rgba(255,255,255,0.15)}
+    .header-brand{text-align:center;padding:1.25rem 1.5rem 0}
+    .nombre-periodico{font-family:var(--fuente-titulo);font-size:3rem;font-weight:900;letter-spacing:-2px;line-height:1;color:var(--rojo)}
+    .nombre-periodico span{color:var(--blanco)}
+    .eslogan{font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.6);margin-top:4px;font-style:italic}
+    nav{display:flex;justify-content:center;border-top:3px solid var(--rojo);margin-top:1rem}
+    nav a{color:rgba(255,255,255,0.85);font-family:var(--fuente-titulo);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0.65rem 2rem;transition:background 0.2s}
+    nav a:hover,nav a.activo{background:var(--rojo);color:var(--blanco)}
+    .volver{display:inline-flex;align-items:center;gap:6px;color:var(--azul);font-family:var(--fuente-titulo);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin:1.5rem 0 1.25rem;transition:color 0.2s}
+    .volver:hover{color:var(--rojo)}
+    .seccion-tag{font-family:var(--fuente-titulo);font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:2.5px;color:var(--blanco);background:var(--azul);padding:4px 10px;display:inline-block;border-radius:2px;margin-bottom:1.25rem}
+    .titular{font-family:var(--fuente-titulo);font-size:2rem;font-weight:900;line-height:1.15;color:var(--azul);margin-bottom:0.5rem}
+    .subtitular{font-size:1.1rem;font-style:italic;color:#333;margin-bottom:1rem;line-height:1.6;border-left:4px solid var(--rojo);padding-left:1.25rem}
+    .firma{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--gris-texto);border-top:1px solid var(--gris-borde);border-bottom:2px solid var(--rojo);padding:0.5rem 0;margin-bottom:1.25rem;display:flex;gap:1.5rem;flex-wrap:wrap}
+    .foto-principal{width:100%;max-height:420px;object-fit:cover;border-radius:8px;margin-bottom:0.75rem;box-shadow:0 4px 20px rgba(0,0,0,0.12)}
+    .foto-caption{font-size:12px;color:var(--gris-texto);text-align:center;margin-bottom:1.5rem;font-style:italic}
+    .articulo p{margin-bottom:1.1rem;font-size:16px;line-height:1.9;color:#222}
+    .articulo p:first-child::first-letter{font-size:3.5rem;font-family:var(--fuente-titulo);font-weight:900;color:var(--azul);float:left;line-height:0.8;margin:6px 10px 0 0}
+    .compartir{display:flex;gap:10px;margin-top:2rem;flex-wrap:wrap}
+    .compartir a{font-family:var(--fuente-titulo);font-size:12px;font-weight:700;padding:8px 18px;border-radius:3px;transition:opacity 0.2s}
+    .compartir a:hover{opacity:0.85}
+    .btn-ig{background:#e1306c;color:#fff}
+    .btn-wa{background:#25d366;color:#fff}
+    footer{background:var(--azul);color:rgba(255,255,255,0.7);padding:1.5rem;text-align:center;font-size:12px;margin-top:2rem}
+    footer strong{color:var(--blanco);font-family:var(--fuente-titulo)}
+    footer a{color:rgba(255,255,255,0.6)}
+    @media(max-width:720px){.nombre-periodico{font-size:2.2rem}.titular{font-size:1.5rem}nav a{font-size:11px;padding:0.5rem 1rem}.header-top{flex-direction:column;gap:2px;text-align:center}.firma{flex-direction:column;gap:4px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <span id="fecha"></span>
+      <span>Periodismo digital local · Edición web</span>
+      <span>Nuevo Chimbote, Áncash</span>
+    </div>
+    <div class="header-brand">
+      <a href="index.html"><div class="nombre-periodico">En<span>Corto</span></div></a>
+      <div class="eslogan">"Lo que pasa, EnCorto."</div>
+    </div>
+    <nav>
+      <a href="index.html">Portada</a>
+      <a href="#">Seguridad</a>
+      <a href="#">Denuncias policiales</a>
+    </nav>
+  </header>
+
+  <div class="contenedor">
+    <a href="index.html" class="volver">← Volver a portada</a>
+
+    <span class="seccion-tag">🗳️ Elecciones 2026 · Política local</span>
+
+    <h1 class="titular">Propuesta electoral busca descentralizar la ejecución de pequeñas obras públicas en la provincia del Santa</h1>
+
+    <p class="subtitular">Candidato Edy Portalatino plantea implementar núcleos ejecutores para generar empleo y acelerar obras vecinales.</p>
+
+    <div class="firma">
+      <span>📍 Chimbote, Áncash</span>
+      <span>✍️ Redacción EnCorto</span>
+    </div>
+
+    <img src="1785838214670_image.png" alt="Candidato Edy Portalatino durante entrevista" class="foto-principal">
+    <p class="foto-caption">📸 El candidato Edy Portalatino durante la entrevista con EnCorto.</p>
+
+    <div class="articulo">
+      <p>El candidato a la Municipalidad Provincial del Santa, Edy Portalatino, afirmó que su principal propuesta de gobierno será la implementación de núcleos ejecutores para descentralizar la ejecución de pequeñas obras públicas, con el objetivo de generar empleo inmediato, reducir la burocracia y permitir que los propios vecinos administren y fiscalicen los recursos destinados a sus sectores. Durante una entrevista, también explicó cómo pretende garantizar el control técnico, la transparencia y la seguridad en este modelo de gestión.</p>
+
+      <p>Portalatino señaló que los núcleos ejecutores permitirán ejecutar proyectos de entre 300 mil y un millón y medio de soles sin esperar grandes procesos administrativos, priorizando obras como pistas, veredas y espacios públicos. Explicó que cada sector elegirá democráticamente a los integrantes del núcleo ejecutor, quienes administrarán los recursos con supervisión permanente de la municipalidad y participación de los vecinos en la fiscalización.</p>
+
+      <p>Ante la consulta sobre la falta de profesionales en algunos asentamientos humanos, el candidato sostuvo que la municipalidad convocará a colegios profesionales y universidades para incorporar ingenieros, contadores y otros especialistas que brinden asistencia técnica a los proyectos. Según indicó, esta medida permitirá combinar mano de obra calificada y no calificada para ampliar las oportunidades laborales.</p>
+
+      <p>Respecto a los mecanismos para evitar un uso inadecuado de los recursos públicos, Portalatino aseguró que cada proyecto contará con ingenieros, administradores y supervisores encargados del control técnico, además de solicitar el acompañamiento preventivo de la Contraloría para fortalecer la transparencia durante la ejecución de las obras. Asimismo, indicó que cada proyecto deberá incluir profesionales responsables de la seguridad ocupacional para prevenir accidentes laborales.</p>
+
+      <p>Como complemento, un abogado especialista en gestión pública consultado para esta investigación consideró que la modalidad de núcleos ejecutores es legalmente viable para proyectos de menor complejidad, siempre que se cumplan los requisitos del sistema Invierte.pe, exista una adecuada planificación y se implementen mecanismos de supervisión y control que garanticen la transparencia y el correcto uso de los recursos públicos.</p>
+
+      <p>Finalmente, una dirigente vecinal manifestó que los asentamientos humanos requieren principalmente obras de saneamiento, pistas y seguridad ciudadana. Sin embargo, advirtió que muchas directivas carecen de conocimientos técnicos y administrativos suficientes para manejar presupuestos públicos, por lo que consideró indispensable el acompañamiento profesional y la rendición de cuentas para evitar irregularidades.</p>
+    </div>
+
+    <div class="compartir">
+      <a href="https://www.instagram.com/_en_corto_/" target="_blank" class="btn-ig">📸 Instagram</a>
+      <a href="#" class="btn-wa">💬 WhatsApp</a>
+    </div>
+  </div>
+
+  <footer>
+    <strong>EnCorto</strong> · "Lo que pasa, EnCorto." · Periodismo digital local<br>
+    Contacto: <a href="mailto:redaccion@encorto.pe">redaccion@encorto.pe</a><br><br>
+    <small>Equipo: Andrea Tinco · Minerva Vidal · Mickella Umeres · Jared Olortiga</small>
+  </footer>
+
+  <script>
+    const dias=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+    const meses=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    const hoy=new Date();
+    document.getElementById('fecha').textContent=dias[hoy.getDay()]+', '+hoy.getDate()+' de '+meses[hoy.getMonth()]+' de '+hoy.getFullYear();
+  </script>
+</body>
+</html>
